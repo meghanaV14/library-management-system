@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='members_bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        table { background: #fff8; margin: 20px auto;}
+        th, td { padding: 10px; }
+    </style>
+</head>
+<body>
+<div class="dashboard">
+    <h2>Members</h2>
+    <a href="{{ url_for('add_member') }}">Add Member</a>
+    <table border="1">
+        <tr><th>Name</th><th>Email</th><th>Address</th><th>Phone</th></tr>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.name }}</td>
+            <td>{{ member.email }}</td>
+            <td>{{ member.address }}</td>
+            <td>{{ member.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+</div>
+</body>
+</html>

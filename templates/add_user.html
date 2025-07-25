@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='add_user_bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Add User</h2>
+    <form method="post">
+        <input name="username" placeholder="Username" required><br>
+        <input name="email" placeholder="Email" type="email"><br>
+        <input name="password" placeholder="Password" type="password" required><br>
+        <select name="role">
+            <option value="admin">Admin</option>
+            <option value="member" selected>Member</option>
+        </select>
+        <br>
+        <button type="submit">Add User</button>
+    </form>
+    <a href="{{ url_for('users') }}">Back to User List</a>
+</div>
+</body>
+</html>

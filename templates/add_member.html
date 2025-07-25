@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Member</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='add_member_bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Add Member</h2>
+    <form method="post">
+        <input name="name" placeholder="Name" required><br>
+        <input name="email" placeholder="Email"><br>
+        <input name="address" placeholder="Address"><br>
+        <input name="phone" placeholder="Phone"><br>
+        <button type="submit">Add Member</button>
+    </form>
+    <a href="{{ url_for('members') }}">Back to Member List</a>
+</div>
+</body>
+</html>

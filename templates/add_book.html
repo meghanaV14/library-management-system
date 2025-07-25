@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='add_book_bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Add Book</h2>
+    <form method="post">
+        <input name="title" placeholder="Title" required><br>
+        <input name="author" placeholder="Author" required><br>
+        <input name="isbn" placeholder="ISBN" required><br>
+        <input type="number" name="total_copies" min="1" placeholder="Total Copies" required><br>
+        <button type="submit">Add Book</button>
+    </form>
+    <a href="{{ url_for('books') }}">Back to Book List</a>
+</div>
+</body>
+</html>

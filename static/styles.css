@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.form-container, .dashboard {
+    background: rgba(255,255,255,0.88);
+    padding: 32px;
+    margin: 80px auto;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 0 12px #444;
+    text-align: center;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    border-radius: 6px;
+    border: none;
+}
+button {
+    background: #572E8B;
+    color: #fff;
+    font-size: 16px;
+}
+a {
+    display: block;
+    margin: 10px auto;
+    color: #181c5e;
+    text-decoration: none;
+}
+
+
+body {
+    background-image: url("{{ url_for('static', filename='login_bg.jpg') }}");
+    background-size: cover;
+}

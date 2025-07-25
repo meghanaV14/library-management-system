@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='books_bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        table { background: #fff8; margin: 20px auto; border-radius: 10px; }
+        th, td { padding: 10px; }
+    </style>
+</head>
+<body>
+<div class="dashboard">
+    <h2>Books</h2>
+    {% if session['role']=='admin' %}
+        <a href="{{ url_for('add_book') }}">Add Book</a>
+    {% endif %}
+    <table border="1">
+        <tr>
+            <th>Title</th><th>Author</th><th>ISBN</th>
+            <th>Total</th><th>Available</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.total_copies }}</td>
+            <td>{{ book.available_copies }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('admin_dashboard') if session['role']=='admin' else url_for('member_dashboard') }}">Back</a>
+</div>
+</body>
+</html>

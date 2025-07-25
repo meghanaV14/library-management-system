@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('https://stars-ai.com/wp-content/uploads/2023/10/online-library-system.jpg') }}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Admin Dashboard</h2>
+        <a href="{{ url_for('users') }}">Manage Users</a>
+        <a href="{{ url_for('books') }}">Manage Books</a>
+        <a href="{{ url_for('members') }}">Manage Members</a>
+        <a href="{{ url_for('issues') }}">Manage Issues</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>

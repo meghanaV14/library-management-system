@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='issue_book_bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Issue Book</h2>
+    <form method="post">
+        <label>Book:</label>
+        <select name="book_id" required>
+            {% for book in books %}
+            <option value="{{ book.id }}">{{ book.title }}</option>
+            {% endfor %}
+        </select><br>
+        <label>Member:</label>
+        <select name="member_id" required>
+            {% for member in members %}
+            <option value="{{ member.id }}">{{ member.name }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Issue</button>
+    </form>
+    <a href="{{ url_for('issues') }}">Back to Issues</a>
+</div>
+</body>
+</html>
